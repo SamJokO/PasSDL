@@ -15,7 +15,12 @@ uses
   SDL_blendmode in '..\Source\SDL_blendmode.pas',
   SDL_camera in '..\Source\SDL_camera.pas',
   SDL_pixels in '..\Source\SDL_pixels.pas',
-  SDL_surface in '..\Source\SDL_surface.pas';
+  SDL_surface in '..\Source\SDL_surface.pas',
+  SDL_clipboard in '..\Source\SDL_clipboard.pas',
+  SDL_error in '..\Source\SDL_error.pas',
+  SDL_inits in '..\Source\SDL_inits.pas',
+  SDL_events in '..\Source\SDL_events.pas',
+  SDL_video in '..\Source\SDL_video.pas';
 
 {$R *.res}
 

@@ -5,6 +5,7 @@ interface
 uses
   SDL.Types,
   SDL_properties,
+  SDL_surface,
   SDL_pixels;
 
 type
@@ -99,7 +100,59 @@ type
   /// </summary>
   TSDL_AcquireCameraFrame     = function (ACamera: PSDL_Camera; ATimestampNS: PUint64): PSDL_Surface; cdecl;
 
+  /// <summary>
+  ///  Release a frame of video acquired from a camera.
+  /// </summary>
+  TSDL_ReleaseCameraFrame     = procedure (ACamera: PSDL_Camera; AFrame: PSDL_Surface); cdecl;
+
+  /// <summary>
+  ///  Use this function to shut down camera processing and close the camera
+  ///  device.
+  /// </summary>
+  TSDL_CloseCamera            = procedure (ACamera: PSDL_Camera); cdecl;
+
+var
+  SDL_GetNumCameraDrivers     : TSDL_GetNumCameraDrivers;
+  SDL_GetCameraDriver         : TSDL_GetCameraDriver;
+  SDL_GetCurrentCameraDriver  : TSDL_GetCurrentCameraDriver;
+  SDL_GetCameras              : TSDL_GetCameras;
+  SDL_GetCameraSupportedFormats
+                              : TSDL_GetCameraSupportedFormats;
+  SDL_GetCameraName           : TSDL_GetCameraName;
+  SDL_GetCameraPosition       : TSDL_GetCameraPosition;
+  SDL_OpenCamera              : TSDL_OpenCamera;
+  SDL_GetCameraPermissionState
+                              : TSDL_GetCameraPermissionState;
+  SDL_GetCameraID             : TSDL_GetCameraID;
+  SDL_GetCameraProperties     : TSDL_GetCameraProperties;
+  SDL_GetCameraFormat         : TSDL_GetCameraFormat;
+  SDL_AcquireCameraFrame      : TSDL_AcquireCameraFrame;
+  SDL_ReleaseCameraFrame      : TSDL_ReleaseCameraFrame;
+  SDL_CloseCamera             : TSDL_CloseCamera;
+
+procedure InitLibrary(const AHandle: THandle);
 
 implementation
+
+procedure InitLibrary(const AHandle: THandle);
+begin
+  @SDL_GetNumCameraDrivers    := BindProcedure(AHandle, 'SDL_GetNumCameraDrivers');
+  @SDL_GetCameraDriver        := BindProcedure(AHandle, 'SDL_GetCameraDriver');
+  @SDL_GetCurrentCameraDriver := BindProcedure(AHandle, 'SDL_GetCurrentCameraDriver');
+  @SDL_GetCameras             := BindProcedure(AHandle, 'SDL_GetCameras');
+  @SDL_GetCameraSupportedFormats
+                              := BindProcedure(AHandle, 'SDL_GetCameraSupportedFormats');
+  @SDL_GetCameraName          := BindProcedure(AHandle, 'SDL_GetCameraName');
+  @SDL_GetCameraPosition      := BindProcedure(AHandle, 'SDL_GetCameraPosition');
+  @SDL_OpenCamera             := BindProcedure(AHandle, 'SDL_OpenCamera');
+  @SDL_GetCameraPermissionState
+                              := BindProcedure(AHandle, 'SDL_GetCameraPermissionState');
+  @SDL_GetCameraID            := BindProcedure(AHandle, 'SDL_GetCameraID');
+  @SDL_GetCameraProperties    := BindProcedure(AHandle, 'SDL_GetCameraProperties');
+  @SDL_GetCameraFormat        := BindProcedure(AHandle, 'SDL_GetCameraFormat');
+  @SDL_AcquireCameraFrame     := BindProcedure(AHandle, 'SDL_AcquireCameraFrame');
+  @SDL_ReleaseCameraFrame     := BindProcedure(AHandle, 'SDL_ReleaseCameraFrame');
+  @SDL_CloseCamera            := BindProcedure(AHandle, 'SDL_CloseCamera');
+end;
 
 end.

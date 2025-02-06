@@ -30,9 +30,8 @@ type
   PSDL_FlipMode               = ^TSDL_FlipMode;
 
 
-  TSDL_Surface = record
-
-  end;
+  TSDL_Surface = record end;
+  PSDL_Surface = ^TSDL_Surface;
 
 implementation
 

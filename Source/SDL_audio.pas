@@ -93,13 +93,13 @@ type
   /// <summary>
   ///  Get a list of currently-connected audio playback devices.
   /// </summary>
-  TSDL_GetAudioPlaybackDevices= function (ACount: Pint): PSDL_AudioDeviceID; cdecl;
+  TSDL_GetAudioPlaybackDevices= function (var ACount: int): PSDL_AudioDeviceID; cdecl;
 
   /// <summary>
   ///  Get a list of currently-connected audio recording devices.
   /// </summary>
   TSDL_GetAudioRecordingDevices
-                              = function (ACount: Pint): PSDL_AudioDeviceID; cdecl;
+                              = function (var ACount: int): PSDL_AudioDeviceID; cdecl;
 
   /// <summary>
   ///  Get the human-readable name of a specific audio device.
@@ -115,12 +115,12 @@ type
   ///  Get the current channel map of an audio device.
   /// </summary>
   TSDL_GetAudioDeviceChannelMap
-                              = function (ADevId: TSDL_AudioDeviceID; ACount: Pint): Pint; cdecl;
+                              = function (ADevId: TSDL_AudioDeviceID; var ACount: int): Pint; cdecl;
 
   /// <summary>
   ///  Open a specific audio device.
   /// </summary>
-  TSDL_OpenAudioDevice        = function (ADevId: TSDL_AudioDeviceID; ASpec: PSDL_AudioSpec): TSDL_AudioDeviceID; cdecl;
+  TSDL_OpenAudioDevice        = function (ADevId: TSDL_AudioDeviceID; const ASpec: PSDL_AudioSpec): TSDL_AudioDeviceID; cdecl;
 
   /// <summary>
   ///  Determine if an audio device is physical (instead of logical).
@@ -165,17 +165,17 @@ type
   /// <summary>
   ///  Bind a list of audio streams to an audio device.
   /// </summary>
-  TSDL_BindAudioStreams       = function (ADevId: TSDL_AudioDeviceID; AStreams: PPSDL_AudioStream; ANumStreams: int): bool; cdecl;
+  TSDL_BindAudioStreams       = function (ADevId: TSDL_AudioDeviceID; const AStreams: PPSDL_AudioStream; ANumStreams: int): bool; cdecl;
 
   /// <summary>
   ///  Bind a single audio stream to an audio device.
   /// </summary>
-  TSDL_BindAudioStream        = function (ADevId: TSDL_AudioDeviceID; ASTream: PSDL_AudioStream): bool; cdecl;
+  TSDL_BindAudioStream        = function (ADevId: TSDL_AudioDeviceID; AStream: PSDL_AudioStream): bool; cdecl;
 
   /// <summary>
   ///  Unbind a list of audio streams from their audio devices.
   /// </summary>
-  TSDL_UnbindAudioStreams     = procedure (AStreams: PPSDL_AudioStream; ANumStreams: int); cdecl;
+  TSDL_UnbindAudioStreams     = procedure (const AStreams: PPSDL_AudioStream; ANumStreams: int); cdecl;
 
   /// <summary>
   ///  Unbind a single audio stream from its audio device.
@@ -190,7 +190,7 @@ type
   /// <summary>
   ///  Create a new audio stream.
   /// </summary>
-  TSDL_CreateAudioStream      = function (ASrc_spec: PSDL_AudioSpec; ADst_spec: PSDL_AudioSpec): PSDL_AudioStream; cdecl;
+  TSDL_CreateAudioStream      = function (const ASrc_spec: PSDL_AudioSpec; const ADst_spec: PSDL_AudioSpec): PSDL_AudioStream; cdecl;
 
   /// <summary>
   ///  Get the properties associated with an audio stream.
@@ -205,7 +205,7 @@ type
   /// <summary>
   ///  Change the input and output formats of an audio stream.
   /// </summary>
-  TSDL_SetAudioStreamFormat   = function (AStream: PSDL_AudioStream; ASrc_spec: PSDL_AudioSpec; ADst_spec: PSDL_AudioSpec): bool; cdecl;
+  TSDL_SetAudioStreamFormat   = function (AStream: PSDL_AudioStream; const ASrc_spec: PSDL_AudioSpec; const ADst_spec: PSDL_AudioSpec): bool; cdecl;
 
   /// <summary>
   ///  Get the frequency ratio of an audio stream.
@@ -233,25 +233,25 @@ type
   ///  Get the current input channel map of an audio stream.
   /// </summary>
   TSDL_GetAudioStreamInputChannelMap
-                              = function (AStream: PSDL_AudioStream; ACount: Pint): Pint; cdecl;
+                              = function (AStream: PSDL_AudioStream; var ACount: int): Pint; cdecl;
 
   /// <summary>
   ///  Get the current output channel map of an audio stream.
   /// </summary>
   TSDL_GetAudioStreamOutputChannelMap
-                              = function (AStream: PSDL_AudioStream; ACount: Pint): Pint; cdecl;
+                              = function (AStream: PSDL_AudioStream; var ACount: int): Pint; cdecl;
 
   /// <summary>
   ///  Set the current input channel map of an audio stream.
   /// </summary>
   TSDL_SetAudioStreamInputChannelMap
-                              = function (AStream: PSDL_AudioStream; AChmap: Pint; ACount: int): bool; cdecl;
+                              = function (AStream: PSDL_AudioStream; const AChmap: Pint; ACount: int): bool; cdecl;
 
   /// <summary>
   ///  Set the current output channel map of an audio stream.
   /// </summary>
   TSDL_SetAudioStreamOutputChannelMap
-                              = function (AStream: PSDL_AudioStream; AChmap: Pint; ACount: int): bool; cdecl;
+                              = function (AStream: PSDL_AudioStream; const AChmap: Pint; ACount: int): bool; cdecl;
 
   /// <summary>
   ///  Add data to the stream.

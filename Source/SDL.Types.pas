@@ -2,38 +2,32 @@
 
   SDL(3) for Delphi
 
-  Copyright © 2025 - present SamJokO@gmail.com
-  All Rights Reserved.
-
   https://github.com/SamJokO/PasSDL
 
-  BSD 2-Caluse License
+  BSD 2-Clause License
 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
+  Copyright (c) 2025, SamJokO
 
- 1. Redistributions of source code must retain the above copyright notice,
-    this list of conditions and the following disclaimer.
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
 
- 2. Redistributions in binary form must reproduce the above copyright notice,
-    this list of conditions and the following disclaimer in the documentation
-    and/or other materials provided with the distribution.
+  1. Redistributions of source code must retain the above copyright notice, this
+     list of conditions and the following disclaimer.
 
- 3. Neither the name of the copyright holder nor the names of its
-    contributors may be used to endorse or promote products derived from
-    this software without specific prior written permission.
+  2. Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ================================================================================}
 unit SDL.Types;
@@ -65,6 +59,9 @@ type
   u_int                       = NativeUInt;         // unsigned int
   Pu_int                      = ^u_int;             // unsigned int *
 
+  intptr_t                    = IntPtr;
+  uintptr_t                   = UIntPtr;
+
   float                       = Single;
   Pfloat                      = ^float;
 
@@ -90,6 +87,12 @@ uses
   SDL_asyncio,
   SDL_audio,
   SDL_blendmode,
+  SDL_camera,
+  SDL_clipboard,
+  SDL_inits,
+
+  SDL_events,
+  SDL_error,
 {$IF DEFINED(MSWINDOWS)}
   Winapi.Windows,
 {$ENDIF}
@@ -129,6 +132,13 @@ begin
     SDL_asyncio.InitLibrary(FHandle);
     SDL_audio.InitLibrary(FHandle);
     SDL_blendmode.InitLibrary(FHandle);
+    SDL_camera.InitLibrary(FHandle);
+    SDL_clipboard.InitLibrary(FHandle);
+    SDL_events.InitLibrary(FHandle);
+
+    SDL_inits.InitLibrary(FHandle);
+
+    SDL_error.InitLibrary(FHandle);
   end
   else
   begin

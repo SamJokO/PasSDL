@@ -325,6 +325,11 @@
         <DCCReference Include="..\Source\SDL_camera.pas"/>
         <DCCReference Include="..\Source\SDL_pixels.pas"/>
         <DCCReference Include="..\Source\SDL_surface.pas"/>
+        <DCCReference Include="..\Source\SDL_clipboard.pas"/>
+        <DCCReference Include="..\Source\SDL_error.pas"/>
+        <DCCReference Include="..\Source\SDL_inits.pas"/>
+        <DCCReference Include="..\Source\SDL_events.pas"/>
+        <DCCReference Include="..\Source\SDL_video.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
