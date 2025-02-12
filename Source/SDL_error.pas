@@ -3,7 +3,8 @@
 interface
 
 uses
-  SDL.Types;
+  SDL.Types,
+  SDL_stdinc;
 
 type
   TSDL_GetError               = function (): PAnsiChar; cdecl;

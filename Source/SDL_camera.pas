@@ -4,6 +4,7 @@ interface
 
 uses
   SDL.Types,
+  SDL_stdinc,
   SDL_properties,
   SDL_surface,
   SDL_pixels;

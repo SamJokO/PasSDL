@@ -313,23 +313,30 @@
             <Form>Form1</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\Source\SDL_assert.pas"/>
         <DCCReference Include="..\Source\SDL.Types.pas"/>
+        <DCCReference Include="..\Source\SDL_assert.pas"/>
         <DCCReference Include="..\Source\SDL_asyncio.pas"/>
         <DCCReference Include="..\Source\SDL_atomic.pas"/>
         <DCCReference Include="..\Source\SDL_audio.pas"/>
-        <DCCReference Include="..\Source\SDL_properties.pas"/>
-        <DCCReference Include="..\Source\SDL_iostream.pas"/>
         <DCCReference Include="..\Source\SDL_bits.pas"/>
         <DCCReference Include="..\Source\SDL_blendmode.pas"/>
         <DCCReference Include="..\Source\SDL_camera.pas"/>
-        <DCCReference Include="..\Source\SDL_pixels.pas"/>
-        <DCCReference Include="..\Source\SDL_surface.pas"/>
         <DCCReference Include="..\Source\SDL_clipboard.pas"/>
         <DCCReference Include="..\Source\SDL_error.pas"/>
-        <DCCReference Include="..\Source\SDL_inits.pas"/>
         <DCCReference Include="..\Source\SDL_events.pas"/>
+        <DCCReference Include="..\Source\SDL_inits.pas"/>
+        <DCCReference Include="..\Source\SDL_iostream.pas"/>
+        <DCCReference Include="..\Source\SDL_loadso.pas"/>
+        <DCCReference Include="..\Source\SDL_pixels.pas"/>
+        <DCCReference Include="..\Source\SDL_properties.pas"/>
+        <DCCReference Include="..\Source\SDL_rect.pas"/>
+        <DCCReference Include="..\Source\SDL_stdinc.pas"/>
+        <DCCReference Include="..\Source\SDL_surface.pas"/>
         <DCCReference Include="..\Source\SDL_video.pas"/>
+        <DCCReference Include="..\Source\SDL_keycode.pas"/>
+        <DCCReference Include="..\Source\SDL_scancode.pas"/>
+        <DCCReference Include="..\Source\SDL_keyboard.pas"/>
+        <DCCReference Include="..\Source\SDL_mouse.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

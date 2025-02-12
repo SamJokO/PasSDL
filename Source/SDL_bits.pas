@@ -3,7 +3,8 @@
 interface
 
 uses
-  SDL.Types;
+  SDL.Types,
+  SDL_stdinc;
 
   function SDL_MostSignificantBitIndex32(AValue: Uint32): int; inline;
   function SDL_HasExactlyOneBitSet32(AValue: Uint32): bool; inline;

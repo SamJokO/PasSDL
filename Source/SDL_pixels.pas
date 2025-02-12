@@ -3,7 +3,8 @@
 interface
 
 uses
-  SDL.Types;
+  SDL.Types,
+  SDL_stdinc;
 
 const
   SDL_ALPHA_OPAQUE            = 255;
@@ -74,7 +75,7 @@ type
                                 );
   PSDL_PackedLayout           = ^TSDL_PackedLayout;
 
-  TSDL_Pixelformat            = (
+  TSDL_PixelFormat            = (
                                   SDL_PIXELFORMAT_UNKNOWN = 0,
                                   SDL_PIXELFORMAT_INDEX1LSB = $11100100,
                                       // SDL_DEFINE_PIXELFORMAT(SDL_PIXELTYPE_INDEX1, SDL_BITMAPORDER_4321, 0, 1, 0),
@@ -225,6 +226,7 @@ type
                                   SDL_PIXELFORMAT_XBGR32 = SDL_PIXELFORMAT_XBGR8888
 {$ENDIF}
                                 );
+  PSDL_PixelFormat = ^TSDL_PixelFormat;
 
   function SDL_DEFINE_PIXELFOURCC(A: AnsiChar; B: AnsiChar; C: AnsiChar; D: AnsiChar): TSDL_PixelFormat;
 
@@ -246,12 +248,142 @@ type
                                 );
   PSDL_Colorspace             = ^TSDL_Colorspace;
 
+  TSDL_Color = record
+    r                           : Uint8;
+    g                           : Uint8;
+    b                           : Uint8;
+    a                           : Uint8;
+  end;
+  PSDL_Color = ^TSDL_Color;
+
+  TSDL_FColor = record
+    r                           : float;
+    g                           : float;
+    b                           : float;
+    a                           : float;
+  end;
+  PSDL_FColor = ^TSDL_FColor;
+
+  TSDL_Palette = record
+    ncolors                     : int;
+    colors                      : PSDL_Color;
+    version                     : Uint32;
+    refcount                    : int;
+  end;
+  PSDL_Palette = ^TSDL_Palette;
+
+  TSDL_PixelFormatDetails = record
+    format                      : TSDL_PixelFormat;
+    bits_per_pixel              : Uint8;
+    bytes_per_pixel             : Uint8;
+    padding                     : array[0..1] of Uint8;
+    Rmask                       : Uint32;
+    Gmask                       : Uint32;
+    Bmask                       : Uint32;
+    Amask                       : Uint32;
+    Rbits                       : Uint8;
+    Gbits                       : Uint8;
+    Bbits                       : Uint8;
+    Abits                       : Uint8;
+    Rshift                      : Uint8;
+    Gshift                      : Uint8;
+    Bshift                      : Uint8;
+    Ashift                      : Uint8;
+  end;
+  PSDL_PixelFormatDetails = ^TSDL_PixelFormatDetails;
+
+type
+  /// <summary>
+  ///  Get the human readable name of a pixel format.
+  /// </summary>
+  TSDL_GetPixelFormatName     = function (Aformat: TSDL_PixelFormat): PAnsiChar; cdecl;
+
+  /// <summary>
+  ///  Convert one of the enumerated pixel formats to a bpp value and RGBA masks.
+  /// </summary>
+  TSDL_GetMasksForPixelformat = function (Aformat: TSDL_PixelFormat; Abpp: Pint; ARmask: PUint32; AGmasl: PUint32; Bmask: PUint32; Amask: PUint32): bool; cdecl;
+
+  /// <summary>
+  ///  Convert one of the enumerated pixel formats to a bpp value and RGBA masks.
+  /// </summary>
+  TSDL_TGetPixelFormatForMasks= function (Abpp: int; Rmask: Uint32; Gmask: Uint32; Bmask: Uint32; Amask: Uint32): TSDL_PixelFormat; cdecl;
+
+  /// <summary>
+  ///  Create an SDL_PixelFormatDetails structure corresponding to a pixel format.
+  /// </summary>
+  TSDL_GetPixelFormatDetails  = function (Aformat: TSDL_PixelFormat): PSDL_PixelFormatDetails; cdecl;
+
+  /// <summary>
+  ///  Create a palette structure with the specified number of color entries.
+  /// </summary>
+  TSDL_CreatePalette          = function (Ancolors: int): PSDL_Palette; cdecl;
+
+  /// <summary>
+  ///  Set a range of colors in a palette.
+  /// </summary>
+  TSDL_SetPaletteColors       = function (APalette: PSDL_Palette; const Acolors: PSDL_Color; Afirstcolor: int; Ancolors: int): bool; cdecl;
+
+  /// <summary>
+  ///  Free a palette created with SDL_CreatePalette().
+  /// </summary>
+  TSDL_DestroyPalette         = procedure (Apalette: PSDL_Palette); cdecl;
+
+  /// <summary>
+  ///  Map an RGB triple to an opaque pixel value for a given pixel format.
+  /// </summary>
+  TSDL_MapRGB                 = function (const Aformat: PSDL_PixelFormatDetails; const Apalette: PSDL_Palette; Ar: Uint8; Ag: Uint8; Ab: Uint8): Uint32; cdecl;
+
+  /// <summary>
+  ///  Map an RGBA quadruple to a pixel value for a given pixel format.
+  /// </summary>
+  TSDL_MapRGBA                = function (const Aformat: PSDL_PixelFormatDetails; const Apalette: PSDL_Palette; Ar: Uint8; Ag: Uint8; Ab: Uint8; Aa: Uint8): Uint32; cdecl;
+
+  /// <summary>
+  ///  Get RGB values from a pixel in the specified format.
+  /// </summary>
+  TSDL_GetRGB                 = procedure (Apixel: Uint32; const Aformat: PSDL_PixelFormatDetails; const Apalette: PSDL_Palette; var Ar: Uint8; var Ag: Uint8; var Ab: Uint8); cdecl;
+
+  /// <summary>
+  ///  Get RGBA values from a pixel in the specified format.
+  /// </summary>
+  TSDL_GetRGBA                = procedure (Apixel: Uint32; const Aformat: PSDL_PixelFormatDetails; const Apalette: PSDL_Palette; var Ar: Uint8; var Ag: Uint8; var Ab: Uint8; var Aa: Uint8); cdecl;
+
+var
+  SDL_GetPixelFormatName      : TSDL_GetPixelFormatName;
+  SDL_GetMasksForPixelformat  : TSDL_GetMasksForPixelformat;
+  SDL_TGetPixelFormatForMasks : TSDL_TGetPixelFormatForMasks;
+  SDL_GetPixelFormatDetails   : TSDL_GetPixelFormatDetails;
+  SDL_CreatePalette           : TSDL_CreatePalette;
+  SDL_SetPaletteColors        : TSDL_SetPaletteColors;
+  SDL_DestroyPalette          : TSDL_DestroyPalette;
+  SDL_MapRGB                  : TSDL_MapRGB;
+  SDL_MapRGBA                 : TSDL_MapRGBA;
+  SDL_GetRGB                  : TSDL_GetRGB;
+  SDL_GetRGBA                 : TSDL_GetRGBA;
+
+procedure InitLibrary(const AHandle: THandle);
+
 implementation
 
 function SDL_DEFINE_PIXELFOURCC(A: AnsiChar; B: AnsiChar; C: AnsiChar; D: AnsiChar): TSDL_PixelFormat;
 begin
 //  A in TSDL_PixelFormat
   Result                      := TSDL_PixelFormat(SDL_FOURCC(A, B, C, D));
+end;
+
+procedure InitLibrary(const AHandle: THandle);
+begin
+  @SDL_GetPixelFormatName     := BindProcedure(AHandle, 'SDL_GetPixelFormatName');
+  @SDL_GetMasksForPixelformat := BindProcedure(AHandle, 'SDL_GetMasksForPixelformat');
+  @SDL_TGetPixelFormatForMasks:= BindProcedure(AHandle, 'SDL_TGetPixelFormatForMasks');
+  @SDL_GetPixelFormatDetails  := BindProcedure(AHandle, 'SDL_GetPixelFormatDetails');
+  @SDL_CreatePalette          := BindProcedure(AHandle, 'SDL_CreatePalette');
+  @SDL_SetPaletteColors       := BindProcedure(AHandle, 'SDL_SetPaletteColors');
+  @SDL_DestroyPalette         := BindProcedure(AHandle, 'SDL_DestroyPalette');
+  @SDL_MapRGB                 := BindProcedure(AHandle, 'SDL_MapRGB');
+  @SDL_MapRGBA                := BindProcedure(AHandle, 'SDL_MapRGBA');
+  @SDL_GetRGB                 := BindProcedure(AHandle, 'SDL_GetRGB');
+  @SDL_GetRGBA                := BindProcedure(AHandle, 'SDL_GetRGBA');
 end;
 
 end.

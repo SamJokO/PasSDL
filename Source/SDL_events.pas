@@ -4,6 +4,11 @@ interface
 
 uses
   SDL.Types,
+  SDL_stdinc,
+  SDL_keyboard,
+  SDL_keycode,
+  SDL_scancode,
+  SDL_mouse,
   SDL_video;
 
 type

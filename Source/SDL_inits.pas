@@ -4,6 +4,7 @@ interface
 
 uses
   SDL.Types,
+  SDL_stdinc,
   SDL_events;
 
 type

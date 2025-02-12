@@ -6,6 +6,7 @@ interface
 
 uses
   SDL.Types,
+  SDL_stdinc,
   SDL_iostream,
   SDL_properties;
 
