@@ -27,7 +27,10 @@ uses
   SDL_keycode in '..\Source\SDL_keycode.pas',
   SDL_scancode in '..\Source\SDL_scancode.pas',
   SDL_keyboard in '..\Source\SDL_keyboard.pas',
-  SDL_mouse in '..\Source\SDL_mouse.pas';
+  SDL_mouse in '..\Source\SDL_mouse.pas',
+  SDL_joystick in '..\Source\SDL_joystick.pas',
+  SDL_power in '..\Source\SDL_power.pas',
+  SDL_sensor in '..\Source\SDL_sensor.pas';
 
 {$R *.res}
 

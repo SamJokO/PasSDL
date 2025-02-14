@@ -337,6 +337,9 @@
         <DCCReference Include="..\Source\SDL_scancode.pas"/>
         <DCCReference Include="..\Source\SDL_keyboard.pas"/>
         <DCCReference Include="..\Source\SDL_mouse.pas"/>
+        <DCCReference Include="..\Source\SDL_joystick.pas"/>
+        <DCCReference Include="..\Source\SDL_power.pas"/>
+        <DCCReference Include="..\Source\SDL_sensor.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -70,6 +70,10 @@ uses
   SDL_inits,
 
   SDL_keyboard,
+  SDL_mouse,
+
+  SDL_power,
+  SDL_sensor,
 
   SDL_surface,
   SDL_events,
@@ -117,6 +121,10 @@ begin
     SDL_pixels.InitLibrary(FHandle);
 
     SDL_keyboard.InitLibrary(FHandle);
+    SDL_mouse.InitLibrary(FHandle);
+
+    SDL_power.InitLibrary(FHandle);
+    SDL_sensor.InitLibrary(FHandle);
 
     SDL_inits.InitLibrary(FHandle);
 
