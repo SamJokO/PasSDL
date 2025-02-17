@@ -30,7 +30,22 @@ uses
   SDL_mouse in '..\Source\SDL_mouse.pas',
   SDL_joystick in '..\Source\SDL_joystick.pas',
   SDL_power in '..\Source\SDL_power.pas',
-  SDL_sensor in '..\Source\SDL_sensor.pas';
+  SDL_sensor in '..\Source\SDL_sensor.pas',
+  SDL_guid in '..\Source\SDL_guid.pas',
+  SDL_touch in '..\Source\SDL_touch.pas',
+  SDL_pen in '..\Source\SDL_pen.pas',
+  SDL_vulkan in '..\Source\SDL_vulkan.pas',
+  SDL_metal in '..\Source\SDL_metal.pas',
+  SDL_locale in '..\Source\SDL_locale.pas',
+  SDL_logs in '..\Source\SDL_logs.pas',
+  SDL_mains in '..\Source\SDL_mains.pas',
+  SDL_messagebox in '..\Source\SDL_messagebox.pas',
+  SDL_misc in '..\Source\SDL_misc.pas',
+  SDL_mutex in '..\Source\SDL_mutex.pas',
+  SDL_thread in '..\Source\SDL_thread.pas',
+  SDL_platform in '..\Source\SDL_platform.pas',
+  SDL_process in '..\Source\SDL_process.pas',
+  SDL_render in '..\Source\SDL_render.pas';
 
 {$R *.res}
 

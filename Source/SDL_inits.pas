@@ -121,7 +121,6 @@ var
   SDL_WasInit                 : TSDL_WasInit;
   SDL_Quit                    : TSDL_Quit;
   SDL_IsMainThread            : TSDL_IsMainThread;
-  SDL_MainThreadCallback      : TSDL_MainThreadCallback;
   SDL_RunOnMainThread         : TSDL_RunOnMainThread;
   SDL_SetAppMetadata          : TSDL_SetAppMetadata;
   SDL_SetAppMetadataProperty  : TSDL_SetAppMetadataProperty;
@@ -139,7 +138,6 @@ begin
   @SDL_WasInit                := BindProcedure(AHandle, 'SDL_WasInit');
   @SDL_Quit                   := BindProcedure(AHandle, 'SDL_Quit');
   @SDL_IsMainThread           := BindProcedure(AHandle, 'SDL_IsMainThread');
-  @SDL_MainThreadCallback     := BindProcedure(AHandle, 'SDL_MainThreadCallback');
   @SDL_RunOnMainThread        := BindProcedure(AHandle, 'SDL_RunOnMainThread');
   @SDL_SetAppMetadata         := BindProcedure(AHandle, 'SDL_SetAppMetadata');
   @SDL_SetAppMetadataProperty := BindProcedure(AHandle, 'SDL_SetAppMetadataProperty');

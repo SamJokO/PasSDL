@@ -71,13 +71,35 @@ uses
 
   SDL_keyboard,
   SDL_mouse,
+  SDL_joystick,
+  SDL_touch,
 
   SDL_power,
   SDL_sensor,
 
+  SDL_guid,
+
+  SDL_vulkan,
+  SDL_metal,
+
+  SDL_locale,
+
   SDL_surface,
   SDL_events,
   SDL_error,
+  SDL_logs,
+  SDL_mains,
+
+  SDL_messagebox,
+  SDL_misc,
+  SDL_thread,
+  SDL_mutex,
+  SDL_platform,
+  SDL_process,
+  SDL_properties,
+  SDL_rect,
+  SDL_render,
+
 {$IF DEFINED(MSWINDOWS)}
   Winapi.Windows,
 {$ENDIF}
@@ -122,13 +144,34 @@ begin
 
     SDL_keyboard.InitLibrary(FHandle);
     SDL_mouse.InitLibrary(FHandle);
+    SDL_joystick.InitLibrary(FHandle);
+    SDL_touch.InitLibrary(FHandle);
 
     SDL_power.InitLibrary(FHandle);
     SDL_sensor.InitLibrary(FHandle);
 
+    SDL_guid.InitLibrary(FHandle);
+    SDL_vulkan.InitLibrary(FHandle);
+    SDL_metal.InitLibrary(FHandle);
+
+    SDL_locale.InitLibrary(FHandle);
+
     SDL_inits.InitLibrary(FHandle);
 
     SDL_error.InitLibrary(FHandle);
+    SDL_logs.InitLibrary(FHandle);
+
+    SDL_mains.InitLibrary(FHandle);
+    SDL_misc.InitLibrary(FHandle);
+    SDL_thread.InitLibrary(FHandle);
+    SDL_mutex.InitLibrary(FHandle);
+    SDL_platform.InitLibrary(FHandle);
+    SDL_process.InitLibrary(FHandle);
+    SDL_properties.InitLibrary(FHandle);
+    SDL_rect.InitLibrary(FHandle);
+    SDL_render.InitLibrary(FHandle);
+
+    SDL_messagebox.InitLibrary(FHandle);
   end
   else
   begin

@@ -301,12 +301,12 @@ type
   /// <summary>
   ///  Convert one of the enumerated pixel formats to a bpp value and RGBA masks.
   /// </summary>
-  TSDL_GetMasksForPixelformat = function (Aformat: TSDL_PixelFormat; Abpp: Pint; ARmask: PUint32; AGmasl: PUint32; Bmask: PUint32; Amask: PUint32): bool; cdecl;
+  TSDL_GetMasksForPixelFormat = function (Aformat: TSDL_PixelFormat; Abpp: Pint; ARmask: PUint32; AGmasl: PUint32; Bmask: PUint32; Amask: PUint32): bool; cdecl;
 
   /// <summary>
   ///  Convert one of the enumerated pixel formats to a bpp value and RGBA masks.
   /// </summary>
-  TSDL_TGetPixelFormatForMasks= function (Abpp: int; Rmask: Uint32; Gmask: Uint32; Bmask: Uint32; Amask: Uint32): TSDL_PixelFormat; cdecl;
+  TSDL_GetPixelFormatForMasks = function (Abpp: int; Rmask: Uint32; Gmask: Uint32; Bmask: Uint32; Amask: Uint32): TSDL_PixelFormat; cdecl;
 
   /// <summary>
   ///  Create an SDL_PixelFormatDetails structure corresponding to a pixel format.
@@ -350,8 +350,8 @@ type
 
 var
   SDL_GetPixelFormatName      : TSDL_GetPixelFormatName;
-  SDL_GetMasksForPixelformat  : TSDL_GetMasksForPixelformat;
-  SDL_TGetPixelFormatForMasks : TSDL_TGetPixelFormatForMasks;
+  SDL_GetMasksForPixelFormat  : TSDL_GetMasksForPixelFormat;
+  SDL_GetPixelFormatForMasks  : TSDL_GetPixelFormatForMasks;
   SDL_GetPixelFormatDetails   : TSDL_GetPixelFormatDetails;
   SDL_CreatePalette           : TSDL_CreatePalette;
   SDL_SetPaletteColors        : TSDL_SetPaletteColors;
@@ -374,8 +374,8 @@ end;
 procedure InitLibrary(const AHandle: THandle);
 begin
   @SDL_GetPixelFormatName     := BindProcedure(AHandle, 'SDL_GetPixelFormatName');
-  @SDL_GetMasksForPixelformat := BindProcedure(AHandle, 'SDL_GetMasksForPixelformat');
-  @SDL_TGetPixelFormatForMasks:= BindProcedure(AHandle, 'SDL_TGetPixelFormatForMasks');
+  @SDL_GetMasksForPixelFormat := BindProcedure(AHandle, 'SDL_GetMasksForPixelFormat');
+  @SDL_GetPixelFormatForMasks := BindProcedure(AHandle, 'SDL_GetPixelFormatForMasks');
   @SDL_GetPixelFormatDetails  := BindProcedure(AHandle, 'SDL_GetPixelFormatDetails');
   @SDL_CreatePalette          := BindProcedure(AHandle, 'SDL_CreatePalette');
   @SDL_SetPaletteColors       := BindProcedure(AHandle, 'SDL_SetPaletteColors');

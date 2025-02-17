@@ -9,6 +9,13 @@ uses
   SDL_keycode,
   SDL_scancode,
   SDL_mouse,
+  SDL_joystick,
+  SDL_power,
+  SDL_camera,
+  SDL_touch,
+  SDL_pen,
+  SDL_sensor,
+  SDL_audio,
   SDL_video;
 
 type
@@ -688,7 +695,7 @@ type
   /// <summsary>
   ///  Check the event queue for messages and optionally return them.
   /// </summary>
-  TSDL_PeekEvents             = function (AEvents: PSDL_Event; ANumevents: int; AAction: TSDL_EventAction; AMinType: Uint32; AMaxType: Uint32): int; cdecl;
+  TSDL_PeepEvents             = function (AEvents: PSDL_Event; ANumevents: int; AAction: TSDL_EventAction; AMinType: Uint32; AMaxType: Uint32): int; cdecl;
 
   /// <summsary>
   ///  Check for the existence of a certain event type in the event queue.
@@ -786,7 +793,7 @@ type
 
 var
   SDL_PumpEvents              : TSDL_PumpEvents;
-  SDL_PeekEvents              : TSDL_PeekEvents;
+  SDL_PeepEvents              : TSDL_PeepEvents;
   SDL_HasEvent                : TSDL_HasEvent;
   SDL_HasEvents               : TSDL_HasEvents;
   SDL_FlushEvent              : TSDL_FlushEvent;
@@ -812,7 +819,7 @@ implementation
 procedure InitLibrary(const AHandle: THandle);
 begin
   @SDL_PumpEvents             := BindProcedure(AHandle, 'SDL_PumpEvents');
-  @SDL_PeekEvents             := BindProcedure(AHandle, 'SDL_PeekEvents');
+  @SDL_PeepEvents             := BindProcedure(AHandle, 'SDL_PeepEvents');
   @SDL_HasEvent               := BindProcedure(AHandle, 'SDL_HasEvent');
   @SDL_HasEvents              := BindProcedure(AHandle, 'SDL_HasEvents');
   @SDL_FlushEvent             := BindProcedure(AHandle, 'SDL_FlushEvent');

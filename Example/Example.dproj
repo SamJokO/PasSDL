@@ -340,6 +340,21 @@
         <DCCReference Include="..\Source\SDL_joystick.pas"/>
         <DCCReference Include="..\Source\SDL_power.pas"/>
         <DCCReference Include="..\Source\SDL_sensor.pas"/>
+        <DCCReference Include="..\Source\SDL_guid.pas"/>
+        <DCCReference Include="..\Source\SDL_touch.pas"/>
+        <DCCReference Include="..\Source\SDL_pen.pas"/>
+        <DCCReference Include="..\Source\SDL_vulkan.pas"/>
+        <DCCReference Include="..\Source\SDL_metal.pas"/>
+        <DCCReference Include="..\Source\SDL_locale.pas"/>
+        <DCCReference Include="..\Source\SDL_logs.pas"/>
+        <DCCReference Include="..\Source\SDL_mains.pas"/>
+        <DCCReference Include="..\Source\SDL_messagebox.pas"/>
+        <DCCReference Include="..\Source\SDL_misc.pas"/>
+        <DCCReference Include="..\Source\SDL_mutex.pas"/>
+        <DCCReference Include="..\Source\SDL_thread.pas"/>
+        <DCCReference Include="..\Source\SDL_platform.pas"/>
+        <DCCReference Include="..\Source\SDL_process.pas"/>
+        <DCCReference Include="..\Source\SDL_render.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

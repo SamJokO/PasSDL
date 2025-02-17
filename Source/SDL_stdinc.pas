@@ -37,7 +37,6 @@ type
   Sint16                      = Int16;
   Sint8                       = Int8;
 
-
   Pint8                       = ^Int8;
   PPint8                      = ^PInt8;
   PUint8                      = ^UInt8;
@@ -1022,10 +1021,8 @@ var
   SDL_getenv_unsafe           : TSDL_getenv_unsafe;
   SDL_setenv_unsafe           : TSDL_setenv_unsafe;
   SDL_unsetenv_unsafe         : TSDL_unsetenv_unsafe;
-  SDL_CompareCallback         : TSDL_CompareCallback;
   SDL_qsort                   : TSDL_qsort;
   SDL_bsearch                 : TSDL_bsearch;
-  SDL_CompareCallback_r       : TSDL_CompareCallback_r;
   SDL_qsort_r                 : TSDL_qsort_r;
   SDL_bsearch_r               : TSDL_bsearch_r;
   SDL_abs                     : TSDL_abs;
@@ -1176,10 +1173,11 @@ implementation
 
 function SDL_SIZE_MAX: size_t;
 begin
-  if SizeOf(NativeInt) = 32 then
-    Result                      := SDL_MAX_UINT32
-  else
-    Result                      := SDL_MAX_UINT64;
+  Result                      := High(size_t);
+//  if SizeOf(NativeInt) = 32 then
+//    Result                      := SDL_MAX_UINT32
+//  else
+//    Result                      := SDL_MAX_UINT64;
 end;
 
 function SDL_iconv_utf8_locale(Abuf: PAnsiChar): PAnsiChar;
@@ -1260,10 +1258,8 @@ begin
   @SDL_getenv_unsafe          := BindProcedure(AHandle, 'SDL_getenv_unsafe');
   @SDL_setenv_unsafe          := BindProcedure(AHandle, 'SDL_setenv_unsafe');
   @SDL_unsetenv_unsafe        := BindProcedure(AHandle, 'SDL_unsetenv_unsafe');
-  @SDL_CompareCallback        := BindProcedure(AHandle, 'SDL_CompareCallback');
   @SDL_qsort                  := BindProcedure(AHandle, 'SDL_qsort');
   @SDL_bsearch                := BindProcedure(AHandle, 'SDL_bsearch');
-  @SDL_CompareCallback_r      := BindProcedure(AHandle, 'SDL_CompareCallback_r');
   @SDL_qsort_r                := BindProcedure(AHandle, 'SDL_qsort_r');
   @SDL_bsearch_r              := BindProcedure(AHandle, 'SDL_bsearch_r');
   @SDL_abs                    := BindProcedure(AHandle, 'SDL_abs');

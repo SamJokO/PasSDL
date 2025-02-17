@@ -287,7 +287,7 @@ type
   /// <summary>
   ///  Perform low-level surface blitting only.
   /// </summary>
-  TSDL_BlitsurfaceUnchecked   = function (Asrc: PSDL_Surface; const Asrcrect: PSDL_Rect; Adst: PSDL_Surface; const Adstrect: PSDL_Rect): bool; cdecl;
+  TSDL_BlitSurfaceUnchecked   = function (Asrc: PSDL_Surface; const Asrcrect: PSDL_Rect; Adst: PSDL_Surface; const Adstrect: PSDL_Rect): bool; cdecl;
 
   /// <summary>
   ///  Perform a scaled blit to a destination surface, which may be of a different
@@ -323,7 +323,7 @@ type
   /// <summary>
   ///  Map an RGB triple to an opaque pixel value for a surface.
   /// </summary>
-  TSDL_MapsurfaceRGB          = function (Asurface: PSDL_Surface; Ar: Uint8; Ag: Uint8; Ab: Uint8): Uint32; cdecl;
+  TSDL_MapSurfaceRGB          = function (Asurface: PSDL_Surface; Ar: Uint8; Ag: Uint8; Ab: Uint8): Uint32; cdecl;
 
   /// <summary>
   ///  Map an RGBA quadruple to a pixel value for a surface.
@@ -401,7 +401,7 @@ var
   SDL_FillSurfaceRect         : TSDL_FillSurfaceRect;
   SDL_FillSurfaceRects        : TSDL_FillSurfaceRects;
   SDL_BlitSurface             : TSDL_BlitSurface;
-  SDL_BlitsurfaceUnchecked    : TSDL_BlitsurfaceUnchecked;
+  SDL_BlitSurfaceUnchecked    : TSDL_BlitSurfaceUnchecked;
   SDL_BlitSurfaceScaled       : TSDL_BlitSurfaceScaled;
   SDL_BlitSurfaceUncheckedScaled
                               : TSDL_BlitSurfaceUncheckedScaled;
@@ -409,7 +409,7 @@ var
   SDL_BlitSurfaceTiledWithScale
                               : TSDL_BlitSurfaceTiledWithScale;
   SDL_BlitSurface9Grid        : TSDL_BlitSurface9Grid;
-  SDL_MapsurfaceRGB           : TSDL_MapsurfaceRGB;
+  SDL_MapSurfaceRGB           : TSDL_MapSurfaceRGB;
   SDL_MapSurfaceRGBA          : TSDL_MapSurfaceRGBA;
   SDL_ReadSurfacePixel        : TSDL_ReadSurfacePixel;
   SDL_ReadSurfacePixelFloat   : TSDL_ReadSurfacePixelFloat;
@@ -472,7 +472,7 @@ begin
   @SDL_FillSurfaceRect        := BindProcedure(AHandle, 'SDL_FillSurfaceRect');
   @SDL_FillSurfaceRects       := BindProcedure(AHandle, 'SDL_FillSurfaceRects');
   @SDL_BlitSurface            := BindProcedure(AHandle, 'SDL_BlitSurface');
-  @SDL_BlitsurfaceUnchecked   := BindProcedure(AHandle, 'SDL_BlitsurfaceUnchecked');
+  @SDL_BlitSurfaceUnchecked   := BindProcedure(AHandle, 'SDL_BlitSurfaceUnchecked');
   @SDL_BlitSurfaceScaled      := BindProcedure(AHandle, 'SDL_BlitSurfaceScaled');
   @SDL_BlitSurfaceUncheckedScaled
                               := BindProcedure(AHandle, 'SDL_BlitSurfaceUncheckedScaled');
@@ -480,7 +480,7 @@ begin
   @SDL_BlitSurfaceTiledWithScale
                               := BindProcedure(AHandle, 'SDL_BlitSurfaceTiledWithScale');
   @SDL_BlitSurface9Grid       := BindProcedure(AHandle, 'SDL_BlitSurface9Grid');
-  @SDL_MapsurfaceRGB          := BindProcedure(AHandle, 'SDL_MapsurfaceRGB');
+  @SDL_MapSurfaceRGB          := BindProcedure(AHandle, 'SDL_MapSurfaceRGB');
   @SDL_MapSurfaceRGBA         := BindProcedure(AHandle, 'SDL_MapSurfaceRGBA');
   @SDL_ReadSurfacePixel       := BindProcedure(AHandle, 'SDL_ReadSurfacePixel');
   @SDL_ReadSurfacePixelFloat  := BindProcedure(AHandle, 'SDL_ReadSurfacePixelFloat');

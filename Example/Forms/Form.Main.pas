@@ -28,6 +28,7 @@ implementation
 
 uses
   SDL.Types,
+  SDL_stdinc,
   SDL_error,
   SDL_clipboard,
   SDL_camera;
