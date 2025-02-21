@@ -1,10 +1,10 @@
-﻿unit SDL_camera;
+﻿unit SDL.camera;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
+  SDL.stdinc,
   SDL_properties,
   SDL_surface,
   SDL_pixels;

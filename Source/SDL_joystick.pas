@@ -4,8 +4,8 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_guid,
+  SDL.stdinc,
+  SDL.guid,
   SDL_power,
   SDL_sensor,
   SDL_properties;

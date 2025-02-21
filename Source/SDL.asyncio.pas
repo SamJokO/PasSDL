@@ -1,10 +1,10 @@
-﻿unit SDL_asyncio;
+﻿unit SDL.asyncio;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   TSDL_AsyncIO = record end;

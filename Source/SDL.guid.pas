@@ -1,10 +1,10 @@
-﻿unit SDL_guid;
+﻿unit SDL.guid;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   TSDL_GUID = record

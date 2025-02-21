@@ -1,10 +1,10 @@
-﻿unit SDL_error;
+﻿unit SDL.error;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   TSDL_GetError               = function (): PAnsiChar; cdecl;

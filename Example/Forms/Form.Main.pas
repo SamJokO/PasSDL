@@ -3,7 +3,7 @@
 interface
 
 uses
-  SDL_audio,
+  SDL.audio,
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Memo.Types,
   FMX.Controls.Presentation, FMX.ScrollBox, FMX.Memo;
@@ -28,10 +28,10 @@ implementation
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_error,
-  SDL_clipboard,
-  SDL_camera;
+  SDL.stdinc,
+  SDL.error,
+  SDL.clipboard,
+  SDL.camera;
 
 {$R *.fmx}
 

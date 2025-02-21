@@ -1,10 +1,10 @@
-﻿unit SDL_atomic;
+﻿unit SDL.atomic;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   TSDL_SpinLock               = NativeInt;
@@ -87,7 +87,7 @@ type
   /// <summary>
   ///  Set a pointer to a new value if it is currently an old value.
   /// </summary>
-  TSDL_CompareAndSwaptAtomicPointer
+  TSDL_CompareAndSwapAtomicPointer
                               = function (A: PPointer; AOldVal: Pointer; ANewVal: Pointer): bool; cdecl;
 
   /// <summary>
@@ -115,8 +115,8 @@ var
   SDL_CompareAndSwapAtomicU32 : TSDL_CompareAndSwapAtomicU32;
   SDL_SetAtomicU32            : TSDL_SetAtomicU32;
   SDL_GetAtomicU32            : TSDL_GetAtomicU32;
-  SDL_CompareAndSwaptAtomicPointer
-                              : TSDL_CompareAndSwaptAtomicPointer;
+  SDL_CompareAndSwapAtomicPointer
+                              : TSDL_CompareAndSwapAtomicPointer;
   SDL_SetAtomicPointer        : TSDL_SetAtomicPointer;
   SDL_GetAtomicPointer        : TSDL_GetAtomicPointer;
 
@@ -140,8 +140,8 @@ begin
   @SDL_CompareAndSwapAtomicU32:= BindProcedure(AHandle, 'SDL_CompareAndSwapAtomicU32');
   @SDL_SetAtomicU32           := BindProcedure(AHandle, 'SDL_SetAtomicU32');
   @SDL_GetAtomicU32           := BindProcedure(AHandle, 'SDL_GetAtomicU32');
-  @SDL_CompareAndSwaptAtomicPointer
-                              := BindProcedure(AHandle, 'SDL_CompareAndSwaptAtomicPointer');
+  @SDL_CompareAndSwapAtomicPointer
+                              := BindProcedure(AHandle, 'SDL_CompareAndSwapAtomicPointer');
   @SDL_SetAtomicPointer       := BindProcedure(AHandle, 'SDL_SetAtomicPointer');
   @SDL_GetAtomicPointer       := BindProcedure(AHandle, 'SDL_GetAtomicPointer');
 end;

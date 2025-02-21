@@ -1,10 +1,10 @@
-﻿unit SDL_blendmode;
+﻿unit SDL.blendmode;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   TSDL_BlendMode              = Uint32;

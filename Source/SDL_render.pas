@@ -4,10 +4,10 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_blendmode,
-  SDL_error,
-  SDL_events,
+  SDL.stdinc,
+  SDL.blendmode,
+  SDL.error,
+  SDL.events,
   SDL_pixels,
   SDL_properties,
   SDL_rect,

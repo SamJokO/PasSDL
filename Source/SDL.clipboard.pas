@@ -1,10 +1,10 @@
-﻿unit SDL_clipboard;
+﻿unit SDL.clipboard;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   /// <summary>

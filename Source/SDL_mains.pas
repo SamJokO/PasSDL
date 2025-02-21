@@ -4,10 +4,10 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
+  SDL.stdinc,
   SDL_inits,
-  SDL_error,
-  SDL_events;
+  SDL.error,
+  SDL.events;
 
 // TODO
 type

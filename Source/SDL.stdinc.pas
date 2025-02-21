@@ -1,4 +1,4 @@
-﻿unit SDL_stdinc;
+﻿unit SDL.stdinc;
 
 interface
 
@@ -41,6 +41,15 @@ type
   PPint8                      = ^PInt8;
   PUint8                      = ^UInt8;
   PPUint8                     = ^PUint8;
+  Pint16                      = ^int16;
+  PPint16                     = ^Pint16;
+  PUint16                     = ^Uint16;
+  PPUint16                    = ^PUint16;
+
+  u_short                     = Uint16;
+  Pu_short                    = ^u_short;
+  short                       = int16;
+  Pshort                      = ^short;
 
 const
   SDL_MAX_SINT8               = $7F;

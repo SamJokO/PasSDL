@@ -4,8 +4,8 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_events;
+  SDL.stdinc,
+  SDL.events;
 
 type
   TSDL_InitFlags              = Uint32;

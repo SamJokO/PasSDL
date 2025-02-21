@@ -59,13 +59,30 @@ function IsLittleEndian: Boolean;
 implementation
 
 uses
-  SDL_stdinc,
-  SDL_assert,
-  SDL_asyncio,
-  SDL_audio,
-  SDL_blendmode,
-  SDL_camera,
-  SDL_clipboard,
+  SDL.stdinc,
+  SDL.assert,
+  SDL.asyncio,
+  SDL.atomic,
+  SDL.audio,
+  SDL.blendmode,
+  SDL.camera,
+  SDL.clipboard,
+  SDL.cpuinfo,
+
+  SDL.dialog,
+
+  SDL.error,
+  SDL.events,
+
+  SDL.filesystem,
+
+  SDL.gamepad,
+  SDL.gpu,
+  SDL.guid,
+
+  SDL.haptic,
+  SDL.hidapi,
+
   SDL_pixels,
   SDL_inits,
 
@@ -77,7 +94,7 @@ uses
   SDL_power,
   SDL_sensor,
 
-  SDL_guid,
+
 
   SDL_vulkan,
   SDL_metal,
@@ -85,8 +102,8 @@ uses
   SDL_locale,
 
   SDL_surface,
-  SDL_events,
-  SDL_error,
+
+
   SDL_logs,
   SDL_mains,
 
@@ -99,6 +116,12 @@ uses
   SDL_properties,
   SDL_rect,
   SDL_render,
+  SDL_revisions,
+
+  SDL_storage,
+  SDL_timer,
+
+  SDL_time,
 
 {$IF DEFINED(MSWINDOWS)}
   Winapi.Windows,
@@ -130,16 +153,33 @@ begin
   FHandle                     := LoadLibrary(LIB_SDL_NAME);
   if (FHandle <> 0) and (FHandle <> INVALID_HANDLE_VALUE) then
   begin
-    SDL_stdinc.InitLibrary(FHandle);
-    SDL_assert.InitLibrary(FHandle);
-    SDL_asyncio.InitLibrary(FHandle);
-    SDL_audio.InitLibrary(FHandle);
-    SDL_blendmode.InitLibrary(FHandle);
-    SDL_camera.InitLibrary(FHandle);
-    SDL_clipboard.InitLibrary(FHandle);
+    SDL.stdinc.InitLibrary(FHandle);
+
+    SDL.assert.InitLibrary(FHandle);
+    SDL.asyncio.InitLibrary(FHandle);
+    SDL.atomic.InitLibrary(FHandle);
+    SDL.audio.InitLibrary(FHandle);
+
+    SDL.blendmode.InitLibrary(FHandle);
+    SDL.camera.InitLibrary(FHandle);
+    SDL.clipboard.InitLibrary(FHandle);
+    SDL.cpuinfo.InitLibrary(FHandle);
+
+    SDL.dialog.InitLibrary(FHandle);
+
+    SDL.error.InitLibrary(FHandle);
+    SDL.events.InitLibrary(FHandle);
+
+    SDL.filesystem.InitLibrary(FHandle);
+
+    SDL.gpu.InitLibrary(FHandle);
+    SDL.guid.InitLibrary(FHandle);
+
+    SDL.haptic.InitLibrary(FHandle);
+    SDL.hidapi.InitLibrary(FHandle);
 
     SDL_surface.InitLibrary(FHandle);
-    SDL_events.InitLibrary(FHandle);
+
     SDL_pixels.InitLibrary(FHandle);
 
     SDL_keyboard.InitLibrary(FHandle);
@@ -150,7 +190,7 @@ begin
     SDL_power.InitLibrary(FHandle);
     SDL_sensor.InitLibrary(FHandle);
 
-    SDL_guid.InitLibrary(FHandle);
+
     SDL_vulkan.InitLibrary(FHandle);
     SDL_metal.InitLibrary(FHandle);
 
@@ -158,7 +198,7 @@ begin
 
     SDL_inits.InitLibrary(FHandle);
 
-    SDL_error.InitLibrary(FHandle);
+
     SDL_logs.InitLibrary(FHandle);
 
     SDL_mains.InitLibrary(FHandle);
@@ -171,6 +211,11 @@ begin
     SDL_rect.InitLibrary(FHandle);
     SDL_render.InitLibrary(FHandle);
 
+    SDL_storage.InitLibrary(FHandle);
+
+    SDL_timer.InitLibrary(FHandle);
+
+    SDL_time.InitLibrary(FHandle);
     SDL_messagebox.InitLibrary(FHandle);
   end
   else

@@ -4,8 +4,8 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_blendmode,
+  SDL.stdinc,
+  SDL.blendmode,
   SDL_properties,
   SDL_rect,
   SDL_iostream,

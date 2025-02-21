@@ -1,21 +1,21 @@
-﻿unit SDL_events;
+﻿unit SDL.events;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
+  SDL.stdinc,
   SDL_keyboard,
   SDL_keycode,
   SDL_scancode,
   SDL_mouse,
   SDL_joystick,
   SDL_power,
-  SDL_camera,
+  SDL.camera,
   SDL_touch,
   SDL_pen,
   SDL_sensor,
-  SDL_audio,
+  SDL.audio,
   SDL_video;
 
 type

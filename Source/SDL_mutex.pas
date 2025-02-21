@@ -4,9 +4,9 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_atomic,
-  SDL_error,
+  SDL.stdinc,
+  SDL.atomic,
+  SDL.error,
   SDL_thread;
 
 type

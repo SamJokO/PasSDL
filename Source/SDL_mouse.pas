@@ -4,7 +4,7 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
+  SDL.stdinc,
   SDL_surface,
   SDL_video;
 

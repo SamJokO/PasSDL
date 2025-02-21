@@ -4,7 +4,7 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 const
   SDL_ALPHA_OPAQUE            = 255;

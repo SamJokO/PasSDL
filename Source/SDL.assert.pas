@@ -1,10 +1,10 @@
-﻿unit SDL_Assert;
+﻿unit SDL.assert;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
 type
   TSDL_AssertState            = (

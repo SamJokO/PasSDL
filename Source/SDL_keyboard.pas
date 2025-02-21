@@ -4,7 +4,7 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
+  SDL.stdinc,
   SDL_keycode,
   SDL_scancode,
   SDL_rect,

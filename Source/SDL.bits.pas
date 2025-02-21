@@ -1,10 +1,10 @@
-﻿unit SDL_bits;
+﻿unit SDL.bits;
 
 interface
 
 uses
   SDL.Types,
-  SDL_stdinc;
+  SDL.stdinc;
 
   function SDL_MostSignificantBitIndex32(AValue: Uint32): int; inline;
   function SDL_HasExactlyOneBitSet32(AValue: Uint32): bool; inline;

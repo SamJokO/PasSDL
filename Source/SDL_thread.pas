@@ -4,10 +4,10 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
-  SDL_error,
+  SDL.stdinc,
+  SDL.error,
   SDL_properties,
-  SDL_atomic;
+  SDL.atomic;
 
 type
   TSDL_Thread = record end;

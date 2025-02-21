@@ -1,4 +1,4 @@
-﻿unit SDL_audio;
+﻿unit SDL.audio;
 
 {$I SDL.inc}
 
@@ -6,7 +6,7 @@ interface
 
 uses
   SDL.Types,
-  SDL_stdinc,
+  SDL.stdinc,
   SDL_iostream,
   SDL_properties;
 
