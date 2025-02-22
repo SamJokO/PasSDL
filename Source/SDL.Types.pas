@@ -82,46 +82,51 @@ uses
 
   SDL.haptic,
   SDL.hidapi,
+  SDL.hints,
 
-  SDL_pixels,
-  SDL_inits,
+  SDL.init,
+  SDL.iostream,
 
-  SDL_keyboard,
-  SDL_mouse,
-  SDL_joystick,
-  SDL_touch,
+  SDL.joystick,
 
-  SDL_power,
-  SDL_sensor,
+  SDL.keyboard,
+  SDL.keycode,
 
+  SDL.loadso,
+  SDL.locale,
+  SDL.log,
 
+  SDL.main,
+  SDL.messagebox,
+  SDL.metal,
+  SDL.misc,
+  SDL.mouse,
+  SDL.mutex,
 
-  SDL_vulkan,
-  SDL_metal,
+  SDL.pen,
+  SDL.pixels,
+  SDL.platform,
+  SDL.power,
+  SDL.process,
+  SDL.properties,
 
-  SDL_locale,
+  SDL.rect,
+  SDL.render,
+  SDL.revisions,
 
-  SDL_surface,
+  SDL.sensor,
+  SDL.storage,
+  SDL.surface,
+  SDL.system,
 
+  SDL.thread,
+  SDL.time,
+  SDL.timer,
+  SDL.touch,
+  SDL.tray,
 
-  SDL_logs,
-  SDL_mains,
-
-  SDL_messagebox,
-  SDL_misc,
-  SDL_thread,
-  SDL_mutex,
-  SDL_platform,
-  SDL_process,
-  SDL_properties,
-  SDL_rect,
-  SDL_render,
-  SDL_revisions,
-
-  SDL_storage,
-  SDL_timer,
-
-  SDL_time,
+  SDL.video,
+  SDL.vulkan,
 
 {$IF DEFINED(MSWINDOWS)}
   Winapi.Windows,
@@ -177,46 +182,49 @@ begin
 
     SDL.haptic.InitLibrary(FHandle);
     SDL.hidapi.InitLibrary(FHandle);
+    SDL.hints.InitLibrary(FHandle);
 
-    SDL_surface.InitLibrary(FHandle);
+    SDL.init.InitLibrary(FHandle);
+    SDL.iostream.InitLibrary(FHandle);
 
-    SDL_pixels.InitLibrary(FHandle);
+    SDL.joystick.InitLibrary(FHandle);
 
-    SDL_keyboard.InitLibrary(FHandle);
-    SDL_mouse.InitLibrary(FHandle);
-    SDL_joystick.InitLibrary(FHandle);
-    SDL_touch.InitLibrary(FHandle);
+    SDL.keyboard.InitLibrary(FHandle);
 
-    SDL_power.InitLibrary(FHandle);
-    SDL_sensor.InitLibrary(FHandle);
+    SDL.loadso.InitLibrary(FHandle);
+    SDL.locale.InitLibrary(FHandle);
+    SDL.log.InitLibrary(FHandle);
 
+    SDL.main.InitLibrary(FHandle);
+    SDL.messagebox.InitLibrary(FHandle);
+    SDL.metal.InitLibrary(FHandle);
+    SDL.misc.InitLibrary(FHandle);
+    SDL.mouse.InitLibrary(FHandle);
+    SDL.mutex.InitLibrary(FHandle);
 
-    SDL_vulkan.InitLibrary(FHandle);
-    SDL_metal.InitLibrary(FHandle);
+    SDL.pixels.InitLibrary(FHandle);
+    SDL.platform.InitLibrary(FHandle);
+    SDL.power.InitLibrary(FHandle);
+    SDL.process.InitLibrary(FHandle);
+    SDL.properties.InitLibrary(FHandle);
 
-    SDL_locale.InitLibrary(FHandle);
+    SDL.rect.InitLibrary(FHandle);
+    SDL.render.InitLibrary(FHandle);
 
-    SDL_inits.InitLibrary(FHandle);
+    SDL.sensor.InitLibrary(FHandle);
+    SDL.storage.InitLibrary(FHandle);
+    SDL.surface.InitLibrary(FHandle);
+    SDL.system.InitLibrary(FHandle);
 
+    SDL.thread.InitLibrary(FHandle);
+    SDL.time.InitLibrary(FHandle);
+    SDL.timer.InitLibrary(FHandle);
+    SDL.touch.InitLibrary(FHandle);
+    SDL.tray.InitLibrary(FHandle);
 
-    SDL_logs.InitLibrary(FHandle);
+    SDL.video.InitLibrary(FHandle);
+    SDL.vulkan.InitLibrary(FHandle);
 
-    SDL_mains.InitLibrary(FHandle);
-    SDL_misc.InitLibrary(FHandle);
-    SDL_thread.InitLibrary(FHandle);
-    SDL_mutex.InitLibrary(FHandle);
-    SDL_platform.InitLibrary(FHandle);
-    SDL_process.InitLibrary(FHandle);
-    SDL_properties.InitLibrary(FHandle);
-    SDL_rect.InitLibrary(FHandle);
-    SDL_render.InitLibrary(FHandle);
-
-    SDL_storage.InitLibrary(FHandle);
-
-    SDL_timer.InitLibrary(FHandle);
-
-    SDL_time.InitLibrary(FHandle);
-    SDL_messagebox.InitLibrary(FHandle);
   end
   else
   begin

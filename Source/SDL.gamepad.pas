@@ -12,11 +12,11 @@ uses
   SDL.Types,
   SDL.error,
   SDL.guid,
-  SDL_iostream,
-  SDL_joystick,
-  SDL_power,
-  SDL_properties,
-  SDL_sensor,
+  SDL.iostream,
+  SDL.joystick,
+  SDL.power,
+  SDL.properties,
+  SDL.sensor,
   SDL.stdinc;
 
 type

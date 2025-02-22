@@ -5,9 +5,9 @@ interface
 uses
   SDL.Types,
   SDL.stdinc,
-  SDL_properties,
-  SDL_surface,
-  SDL_pixels;
+  SDL.properties,
+  SDL.surface,
+  SDL.pixels;
 
 type
   TSDL_CameraID               = Uint32;

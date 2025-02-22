@@ -6,8 +6,8 @@ uses
   SDL.Types,
   SDL.stdinc,
   SDL.error,
-  SDL_properties,
-  SDL_video;
+  SDL.properties,
+  SDL.video;
 
 type
   TSDL_DialogFileFilter = record

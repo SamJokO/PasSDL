@@ -5,11 +5,11 @@ interface
 uses
   SDL.Types,
   SDL.stdinc,
-  SDL_pixels,
-  SDL_properties,
-  SDL_rect,
-  SDL_surface,
-  SDL_video;
+  SDL.pixels,
+  SDL.properties,
+  SDL.rect,
+  SDL.surface,
+  SDL.video;
 
 type
   TSDL_GPUDevice = record end;

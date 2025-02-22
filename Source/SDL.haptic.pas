@@ -5,7 +5,7 @@ interface
 uses
   SDL.Types,
   SDL.stdinc,
-  SDL_joystick;
+  SDL.joystick;
 
 type
   TSDL_Haptic = record end;

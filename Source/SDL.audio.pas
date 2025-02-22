@@ -7,8 +7,8 @@ interface
 uses
   SDL.Types,
   SDL.stdinc,
-  SDL_iostream,
-  SDL_properties;
+  SDL.iostream,
+  SDL.properties;
 
 const
   SDL_AUDIO_MASK_BITSIZE      = $FF;

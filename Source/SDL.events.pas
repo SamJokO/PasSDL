@@ -5,18 +5,18 @@ interface
 uses
   SDL.Types,
   SDL.stdinc,
-  SDL_keyboard,
-  SDL_keycode,
-  SDL_scancode,
-  SDL_mouse,
-  SDL_joystick,
-  SDL_power,
+  SDL.keyboard,
+  SDL.keycode,
+  SDL.scancode,
+  SDL.mouse,
+  SDL.joystick,
+  SDL.power,
   SDL.camera,
-  SDL_touch,
-  SDL_pen,
-  SDL_sensor,
+  SDL.touch,
+  SDL.pen,
+  SDL.sensor,
   SDL.audio,
-  SDL_video;
+  SDL.video;
 
 type
   TSDL_EventType              = (
