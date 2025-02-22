@@ -48,7 +48,7 @@ uses
   SDL.process in '..\Source\SDL.process.pas',
   SDL.properties in '..\Source\SDL.properties.pas',
   SDL.stdinc in '..\Source\SDL.stdinc.pas',
-  SDL.Types in '..\Source\SDL.Types.pas',
+  SDL.PascalEntry in '..\Source\SDL.PascalEntry.pas',
   SDL.version in '..\Source\SDL.version.pas',
   SDL.rect in '..\Source\SDL.rect.pas',
   SDL.render in '..\Source\SDL.render.pas',

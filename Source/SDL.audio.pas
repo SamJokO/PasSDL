@@ -5,7 +5,7 @@
 interface
 
 uses
-  SDL.Types,
+  SDL.PascalEntry,
   SDL.stdinc,
   SDL.iostream,
   SDL.properties;

@@ -3,7 +3,7 @@
 interface
 
 uses
-  SDL.Types,
+  SDL.PascalEntry,
   SDL.error,
   SDL.stdinc;
 

@@ -3,7 +3,7 @@
 interface
 
 uses
-  SDL.Types,
+  SDL.PascalEntry,
   SDL.stdinc;
 
   function SDL_MostSignificantBitIndex32(AValue: Uint32): int; inline;

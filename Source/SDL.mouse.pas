@@ -3,7 +3,7 @@
 interface
 
 uses
-  SDL.Types,
+  SDL.PascalEntry,
   SDL.stdinc,
   SDL.surface,
   SDL.video;

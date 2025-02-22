@@ -9,7 +9,7 @@
 interface
 
 uses
-  SDL.Types,
+  SDL.PascalEntry,
   SDL.error,
   SDL.guid,
   SDL.iostream,

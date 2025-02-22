@@ -27,7 +27,7 @@ var
 implementation
 
 uses
-  SDL.Types,
+  SDL.PascalEntry,
   SDL.stdinc,
   SDL.error,
   SDL.clipboard,

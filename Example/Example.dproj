@@ -357,7 +357,7 @@
         <DCCReference Include="..\Source\SDL.process.pas"/>
         <DCCReference Include="..\Source\SDL.properties.pas"/>
         <DCCReference Include="..\Source\SDL.stdinc.pas"/>
-        <DCCReference Include="..\Source\SDL.Types.pas"/>
+        <DCCReference Include="..\Source\SDL.PascalEntry.pas"/>
         <DCCReference Include="..\Source\SDL.version.pas"/>
         <DCCReference Include="..\Source\SDL.rect.pas"/>
         <DCCReference Include="..\Source\SDL.render.pas"/>
