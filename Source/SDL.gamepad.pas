@@ -1,5 +1,15 @@
 ﻿unit SDL.gamepad;
 
+(*==============================================================================
+
+  - PasSDL (Based on SDL)
+
+  - Author  : samjoko@gmail.com (https://github.com/SamJokO/PasSDL)
+
+  - License : BSD-2-Caluse license
+
+=============================================================================*)
+
 {
   Delphi not support Nintendo or some gaming os.
   That is why did not porting.

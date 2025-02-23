@@ -64,12 +64,13 @@ uses
   SDL.video in '..\Source\SDL.video.pas',
   SDL.vulkan in '..\Source\SDL.vulkan.pas',
   SDL.system in '..\Source\SDL.system.pas',
-  SDL.tray in '..\Source\SDL.tray.pas';
+  SDL.tray in '..\Source\SDL.tray.pas',
+  Form.Audio in 'Forms\Form.Audio.pas' {FormAudio};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormAudio, FormAudio);
   Application.Run;
 end.

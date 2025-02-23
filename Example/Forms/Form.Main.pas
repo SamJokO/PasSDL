@@ -27,7 +27,9 @@ var
 implementation
 
 uses
+  SDL.init,
   SDL.PascalEntry,
+  SDL.version,
   SDL.stdinc,
   SDL.error,
   SDL.clipboard,
@@ -47,7 +49,16 @@ var
   vMimes                      : PPAnsiChar;
   vMime                       : PAnsiChar;      
 begin
-//
+  SDL_init(SDL_INIT_AUDIO);
+  SDL_init(SDL_INIT_VIDEO);
+  SDL_init(SDL_INIT_EVENTS);
+
+  WriteLog('Version : ' + SDL_GetVersion().ToString);
+  WriteLog('Major ' + SDL_VERSIONNUM_MAJOR(SDL_GetVersion()).ToString );
+  WriteLog('Major ' + SDL_VERSIONNUM_MINOR(SDL_GetVersion()).ToString );
+  WriteLog('Major ' + SDL_VERSIONNUM_MICRO(SDL_GetVersion()).ToString );
+
+
   vMimes                      := SDL_GetClipboardMimeTypes(vSize);
   WriteLog('Mimi type size is ' + vSize.ToString);
   if vSize > 0 then
@@ -66,11 +77,12 @@ begin
     WriteLog('clipboard text is  ' + SDL_GetClipboardText());
   end;
 
+  vCount                      := 0;
   vAudIds                     := SDL_GetAudioPlaybackDevices(vCount);
   WriteLog('Audio device count ' + vCount.ToString);
   for i := 0 to vCount - 1 do
   begin
-  
+    WriteLog('Audio driver is ' + SDL_GetAudioDriver(i));
   end;
 
   vCount                      := SDL_GetNumCameraDrivers;

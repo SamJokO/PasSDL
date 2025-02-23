@@ -38,7 +38,7 @@ const
 {$IF DEFINED(MSWINDOWS)}
   LIB_SDL_NAME                = 'SDL3.dll';
 {$ELSEIF DEFINED(MACOS)}
-  LIB_SDL_NAME                = 'SDL3.dylib';
+  LIB_SDL_NAME                = 'libSDL3.0.dylib';
   {$IF DEFINED(IOS)}
   {$ELSE}
   {$ENDIF}
@@ -125,6 +125,7 @@ uses
   SDL.touch,
   SDL.tray,
 
+  SDL.version,
   SDL.video,
   SDL.vulkan,
 
@@ -138,7 +139,11 @@ var
 
 function BindProcedure(const AHandle: THandle; const AFuncName: AnsiString): Pointer;
 begin
+{$IF DEFINED(OSX)}
+  Result                      := GetProcAddress(AHandle, PChar(string(AFuncName)));
+{$ELSE}
   Result                      := GetProcAddress(AHandle, PAnsiChar(AFuncName));
+{$ENDIF}
   if Result = nil then
     raise Exception.CreateFmt('Can not bind SDL procedure [%s]', [AFuncName]);
 end;
@@ -222,6 +227,7 @@ begin
     SDL.touch.InitLibrary(FHandle);
     SDL.tray.InitLibrary(FHandle);
 
+    SDL.version.InitLibrary(FHandle);
     SDL.video.InitLibrary(FHandle);
     SDL.vulkan.InitLibrary(FHandle);
 
