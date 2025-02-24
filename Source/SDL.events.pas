@@ -730,18 +730,18 @@ type
   /// <summsary>
   ///  Poll for currently pending events.
   /// </summary>
-  TSDL_PollEvent              = function (AEvent: PSDL_Event): bool; cdecl;
+  TSDL_PollEvent              = function (var AEvent: TSDL_Event): bool; cdecl;
 
   /// <summsary>
   ///  Wait indefinitely for the next available event.
   /// </summary>
-  TSDL_WaitEvent              = function (AEvent: PSDL_Event): bool; cdecl;
+  TSDL_WaitEvent              = function (var AEvent: TSDL_Event): bool; cdecl;
 
   /// <summsary>
   ///  Wait until the specified timeout (in milliseconds) for the next available
   ///  event.
   /// </summary>
-  TSDL_WaitEventTimeout       = function (AEvent: PSDL_Event; ATimoutMS: Sint32): bool; cdecl;
+  TSDL_WaitEventTimeout       = function (var AEvent: TSDL_Event; ATimoutMS: Sint32): bool; cdecl;
 
   /// <summsary>
   ///  Add an event to the event queue.

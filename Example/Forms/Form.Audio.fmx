@@ -2,19 +2,47 @@ object FormAudio: TFormAudio
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 262
-  ClientWidth = 450
+  ClientHeight = 349
+  ClientWidth = 431
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
   DesignerMasterStyle = 0
   object btnPlay: TButton
-    Position.X = 28.000000000000000000
-    Position.Y = 28.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
     TabOrder = 1
-    Text = 'btnPlay'
+    Text = 'Play wave'
     TextSettings.Trimming = None
     OnClick = btnPlayClick
+  end
+  object btnRecord: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 64.000000000000000000
+    TabOrder = 2
+    Text = 'Record audio'
+    TextSettings.Trimming = None
+    OnClick = btnRecordClick
+  end
+  object btnStop: TButton
+    Position.X = 116.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 3
+    Text = 'Stop wave'
+    TextSettings.Trimming = None
+    OnClick = btnStopClick
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Bottom
+    Position.Y = 120.000000000000000000
+    Size.Width = 431.000000000000000000
+    Size.Height = 229.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 431.000000000000000000
+    Viewport.Height = 229.000000000000000000
   end
 end

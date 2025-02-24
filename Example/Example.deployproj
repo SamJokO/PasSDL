@@ -43,6 +43,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="..\Media\sample.wav" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>Example.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>sample.wav</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="..\Output\OSXARM64\Debug\Example" Condition="'$(Config)'=='Debug'">
             <RemoteDir>Example.app\Contents\MacOS\</RemoteDir>
             <RemoteName>Example</RemoteName>

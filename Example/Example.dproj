@@ -310,7 +310,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="Forms\Form.Main.pas">
-            <Form>Form1</Form>
+            <Form>FormMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="..\Source\SDL.assert.pas"/>
@@ -378,6 +378,10 @@
             <Form>FormAudio</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="Forms\Form.Windows.pas">
+            <Form>FormWindows</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -422,6 +426,13 @@
                 <DeployFile LocalName="$(BDS)\bin\delphi_PROJECTICNS.icns" Configuration="Debug" Class="ProjectOSXResource">
                     <Platform Name="OSXARM64">
                         <RemoteName>Example.icns</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Media\sample.wav" Configuration="Debug" Class="File">
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <RemoteName>sample.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -9,7 +9,7 @@ uses
   FMX.Controls.Presentation, FMX.ScrollBox, FMX.Memo;
 
 type
-  TForm1 = class(TForm)
+  TFormMain = class(TForm)
     Memo1: TMemo;
     procedure FormCreate(Sender: TObject);
   private
@@ -22,7 +22,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormMain: TFormMain;
 
 implementation
 
@@ -37,7 +37,7 @@ uses
 
 {$R *.fmx}
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TFormMain.FormCreate(Sender: TObject);
 var
   vCount                      : int;
   vIds                        : PSDL_CameraID;
@@ -102,7 +102,7 @@ begin
     
 end;
 
-procedure TForm1.WriteLog(const AMessage: string);
+procedure TFormMain.WriteLog(const AMessage: string);
 begin
   Memo1.Lines.BeginUpdate;
   try

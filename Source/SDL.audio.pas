@@ -363,12 +363,12 @@ type
   /// <summary>
   ///  Load the audio data of a WAVE file into memory.
   /// </summary>
-  TSDL_LoadWAV_IO             = function (ASrc: PSDL_IOStream; ACloseio: bool; ASpec: PSDL_AudioSpec; AAudio_buf: PPUint8; AAudio_len: PUint32): bool; cdecl;
+  TSDL_LoadWAV_IO             = function (ASrc: PSDL_IOStream; ACloseio: bool; var ASpec: TSDL_AudioSpec; var AAudio_buf: PUint8; var AAudio_len: Uint32): bool; cdecl;
 
   /// <summary>
   ///  Loads a WAV from a file path.
   /// </summary>
-  TSDL_LoadWAV                = function (const APath: PAnsiChar; ASpec: PSDL_AudioSpec; AAudio_buf: PPUint8; AAudio_len: PUint32): bool; cdecl;
+  TSDL_LoadWAV                = function (const APath: PAnsiChar; var ASpec: TSDL_AudioSpec; var AAudio_buf: PUint8; var AAudio_len: Uint32): bool; cdecl;
 
   /// <summary>
   ///  Mix audio data in a specified format.
@@ -378,7 +378,7 @@ type
   /// <summary>
   ///  Convert some audio data of one format to another format.
   /// </summary>
-  TSDL_ConvertAudioSamples    = function (const ASrc_spec: PSDL_AudioSpec; const ASrc_data: PUint8; ASrc_len: int; const ADst_spec: PSDL_AudioSpec; ADst_data: PPUint8; ADst_len: Pint): bool; cdecl;
+  TSDL_ConvertAudioSamples    = function (const ASrc_spec: PSDL_AudioSpec; const ASrc_data: PUint8; ASrc_len: int; const ADst_spec: PSDL_AudioSpec; var ADst_data: PUint8; var ADst_len: int): bool; cdecl;
 
   /// <summary>
   ///  Get the human readable name of an audio format.

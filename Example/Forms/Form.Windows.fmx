@@ -1,0 +1,46 @@
+object FormWindows: TFormWindows
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object btnCreateWindow: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Create Window'
+    TextSettings.Trimming = None
+    OnClick = btnCreateWindowClick
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Bottom
+    Position.Y = 120.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 360.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 636.000000000000000000
+    Viewport.Height = 356.000000000000000000
+  end
+  object btnDrawLine: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Draw line'
+    TextSettings.Trimming = None
+    OnClick = btnDrawLineClick
+  end
+end

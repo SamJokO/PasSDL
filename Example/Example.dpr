@@ -3,7 +3,7 @@
 uses
   System.StartUpCopy,
   FMX.Forms,
-  Form.Main in 'Forms\Form.Main.pas' {Form1},
+  Form.Main in 'Forms\Form.Main.pas' {FormMain},
   SDL.assert in '..\Source\SDL.assert.pas',
   SDL.asyncio in '..\Source\SDL.asyncio.pas',
   SDL.atomic in '..\Source\SDL.atomic.pas',
@@ -65,12 +65,13 @@ uses
   SDL.vulkan in '..\Source\SDL.vulkan.pas',
   SDL.system in '..\Source\SDL.system.pas',
   SDL.tray in '..\Source\SDL.tray.pas',
-  Form.Audio in 'Forms\Form.Audio.pas' {FormAudio};
+  Form.Audio in 'Forms\Form.Audio.pas' {FormAudio},
+  Form.Windows in 'Forms\Form.Windows.pas' {FormWindows};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TFormAudio, FormAudio);
+  Application.CreateForm(TFormWindows, FormWindows);
   Application.Run;
 end.

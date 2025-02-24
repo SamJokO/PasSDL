@@ -245,13 +245,13 @@ type
   /// <summary>
   ///  Get the desktop area represented by a display.
   /// </summary>
-  TSDL_GetDisplayBounds       = function (AdisplayID: TSDL_DisplayID; ARect: PSDL_Rect): bool; cdecl;
+  TSDL_GetDisplayBounds       = function (AdisplayID: TSDL_DisplayID; var ARect: TSDL_Rect): bool; cdecl;
 
   /// <summary>
   ///  Get the usable desktop area represented by a display, in screen
   ///  coordinates.
   /// </summary>
-  TSDL_GetDisplayUsableBounds = function (AdisplayID: TSDL_DisplayID; ARect: PSDL_Rect): bool; cdecl;
+  TSDL_GetDisplayUsableBounds = function (AdisplayID: TSDL_DisplayID; var ARect: TSDL_Rect): bool; cdecl;
 
   /// <summary>
   ///  Get the orientation of a display when it is unrotated.
