@@ -120,7 +120,7 @@ type
   /// <summary>
   ///  Get the current audio format of a specific audio device.
   /// </summary>
-  TSDL_GetAudioDeviceFormat   = function (ADevId: TSDL_AudioDeviceID; ASpec: PSDL_AudioSpec; ASample_frames: Pint): bool; cdecl;
+  TSDL_GetAudioDeviceFormat   = function (ADevId: TSDL_AudioDeviceID; var ASpec: TSDL_AudioSpec; var ASample_frames: int): bool; cdecl;
 
   /// <summary>
   ///  Get the current channel map of an audio device.

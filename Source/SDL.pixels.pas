@@ -215,6 +215,9 @@ type
                                   SDL_PIXELFORMAT_EXTERNAL_OES = $2053454f,     //*< Android video texture format
                                       // SDL_DEFINE_PIXELFOURCC('O', 'E', 'S', ' ') */
 
+                                  SDL_PIXELFORMAT_MJPG              = $47504a4d,  // Motion JPEG
+                                      // SDL_DEFINE_PIXELFOURCC('M', 'J', 'P', 'G')
+
                                   // Aliases for RGBA byte arrays of color data, for the current platform
 {$IF DEFINED(LITTLE_ENDIAN)}
                                   SDL_PIXELFORMAT_RGBA32 = SDL_PIXELFORMAT_ABGR8888,

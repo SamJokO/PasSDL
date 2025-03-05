@@ -278,7 +278,7 @@ type
   ///  Get the closest match to the requested display mode.
   /// </summary>
   TSDL_GetClosestFullscreenDisplayMode
-                              = function (AdispladyID: TSDL_DisplayID; Aw: int; Ah: int; Arefresh_rate: float; Ainclude_high_density_kodes: bool; Aclosest: PSDL_DisplayMode): bool; cdecl;
+                              = function (AdispladyID: TSDL_DisplayID; Aw: int; Ah: int; Arefresh_rate: float; Ainclude_high_density_kodes: bool; var Aclosest: TSDL_DisplayMode): bool; cdecl;
 
   /// <summary>
   ///  Get information about the desktop's display mode.

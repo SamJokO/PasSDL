@@ -72,6 +72,6 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TFormWindows, FormWindows);
+  Application.CreateForm(TFormAudio, FormAudio);
   Application.Run;
 end.

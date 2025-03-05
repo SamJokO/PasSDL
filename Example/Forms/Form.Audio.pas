@@ -87,12 +87,16 @@ var
   vDevice                     : PSDL_AudioDeviceID;
   i                           : Integer;
   vName                       : AnsiString;
+  vSamplerate                 : int;
 
   vRecordSpec                 : TSDL_AudioSpec;
-begin
-  SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_RECORDING, @FAudioSpec, loadStream, nil);
 
-  Exit;
+  vAudioStream                : PSDL_AudioStream;
+begin
+
+//  SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_RECORDING, @FAudioSpec, loadStream, nil);
+//
+//  Exit;
 
   vCount                      := 0;
 
@@ -103,17 +107,22 @@ begin
     Exit;
   end;
 
+  vRecordSpec.format          := SDL_AUDIO_F32;
+  vRecordSpec.channels        := 2;
+  vRecordSpec.freq            := 48000;
+
   for i := 0 to vCount - 1 do
   begin
     vDevice                     := vDevices;
     vName                       := SDL_GetAudioDeviceName(vDevice^);
     WriteLog((i + 1).ToString + '. devices name; ' + vName);
+    if not SDL_GetAudioDeviceFormat(vDevice^, vRecordSpec, vSamplerate) then
+      WriteLog('Can not get info');
+
     Inc(vDevices);
   end;
 
-  vRecordSpec.format          := SDL_AUDIO_F32;
-  vRecordSpec.channels        := 2;
-  vRecordSpec.freq            := 44100;
+
 
 
 

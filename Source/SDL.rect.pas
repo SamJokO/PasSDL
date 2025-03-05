@@ -77,7 +77,7 @@ type
 
   function SDL_PointInRectFloat(const Ap: PSDL_FPoint; const Ar: PSDL_FRect): bool; inline;
   function SDL_RectEmptyFloat(const Ar: PSDL_FRect): bool; inline;
-  function SDL_RectsEqualEpsilon(const Aa: PSDL_FRect; const Ab: PSDL_FRect; const Aepsilon: float): bool; inline;
+  function SDL_RectsEqualEpsilon(const Aa: PSDL_FRect; const Ab: PSDL_FRect; Aepsilon: float): bool; inline;
   function SDL_RectsEqualFloat(const Aa: PSDL_FRect; const Ab: PSDL_FRect): bool; inline;
 
 type
@@ -200,7 +200,7 @@ begin
   end;
 end;
 
-function SDL_RectsEqualEpsilon(const Aa: PSDL_FRect; const Ab: PSDL_FRect; const Aepsilon: float): bool;
+function SDL_RectsEqualEpsilon(const Aa: PSDL_FRect; const Ab: PSDL_FRect; Aepsilon: float): bool;
 begin
   Result                      := False;
 

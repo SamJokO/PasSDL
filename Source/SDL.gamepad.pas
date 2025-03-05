@@ -145,7 +145,6 @@ type
       1: (axis: TSDL_OutRecord_001);
   end;
 
-
   TSDL_GamepadBinding = record
     input_type                  : TSDL_GamepadBindingType;
     input                       : TSDL_InnerGroup;
