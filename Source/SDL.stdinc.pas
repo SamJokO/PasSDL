@@ -22,9 +22,9 @@ type
   size_t                      = NativeUInt;
   Psize_t                     = ^size_T;
 
-  int                         = NativeInt;          // int
+  int                         = FixedInt;           // int
   Pint                        = ^int;               // int *
-  u_int                       = NativeUInt;         // unsigned int
+  u_int                       = FixedUInt;          // unsigned int
   Pu_int                      = ^u_int;             // unsigned int *
 
   long                        = NativeInt;

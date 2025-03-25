@@ -8,14 +8,22 @@ This repository is based on Official SDL Github (https://github.com/libsdl-org/S
 
 Author : Leonard (samjoko@gmail.com)
 
+### 2025-03-25
+
+- Bug fixed (32 amd 64bit platform primitive type.)
+
 ### 2025-03-05 
 
-- SDL 3.2.8 based support. (OpenGL excluded)
+- SDL 3.2.8 based support. (OpenGL excluded)
 
 ### 2025-02-23 
 
 - SDL 3.2.0 based porting. (OpenGL excluded)
 - FMX Sample include
+
+### Compiler
+
+- Delphi 12.2
 
 ## License
 
