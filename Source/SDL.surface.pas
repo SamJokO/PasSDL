@@ -33,6 +33,7 @@ const
 // define SDL_MUSTLOCK(S)
 type
   TSDL_ScaleMode              = (
+                                  SDL_SCALEMODE_INVALID = -1,
                                   SDL_SCALEMODE_NEAREST,
                                   SDL_SCALEMODE_LINEAR
                                 );

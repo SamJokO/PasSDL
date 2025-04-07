@@ -8,9 +8,13 @@ This repository is based on Official SDL Github (https://github.com/libsdl-org/S
 
 Author : Leonard (samjoko@gmail.com)
 
+### 2025-04-07
+
+- SDL 3.2.10 based support. (OpenGL exclude)
+
 ### 2025-03-25
 
-- Bug fixed (32 amd 64bit platform primitive type.)
+- Bug fixed (32 and 64bit platform primitive type.)
 
 ### 2025-03-05 
 
