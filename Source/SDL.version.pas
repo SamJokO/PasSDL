@@ -19,7 +19,7 @@ uses
 const
   SDL_MAJOR_VERSION           = 3;
   SDL_MINOR_VERSION           = 2;
-  SDL_MICRO_VERSION           = 8;
+  SDL_MICRO_VERSION           = 12;
 
 
   function SDL_VERSIONNUM(Amajor: int; Aminor: int; Apatch: int): int; inline;
