@@ -8,6 +8,10 @@ This repository is based on Official SDL Github (https://github.com/libsdl-org/S
 
 Author : Leonard (samjoko@gmail.com)
 
+### 2025-05-07
+
+- SDL 3.2.12 based support. (OpenGL exclude)
+
 ### 2025-04-07
 
 - SDL 3.2.10 based support. (OpenGL exclude)
